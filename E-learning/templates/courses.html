@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-based E-Learning Platform - Courses</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #666;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .course {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        .course h3 {
+            margin-top: 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cloud-based E-Learning Platform</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="service.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Available Courses</h2>
+        <div class="course">
+            <h3>Introduction to Programming</h3>
+            <p>A beginner-friendly course covering the basics of programming concepts.</p>
+            <a href="{{ url_for('course_details_1')}}">Learn More</a>
+        </div>
+        <div class="course">
+            <h3>Data Science Fundamentals</h3>
+            <p>An introductory course on data science principles and techniques.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <!-- Add more courses as needed -->
+    </div>
+
+
+
+    <footer>
+        <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
