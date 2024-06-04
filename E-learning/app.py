@@ -196,28 +196,23 @@ def quiz():
        db.session.commit()
     return render_template('quizzes.html', questions=questions)
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['POST','GET'])
 def submit():
-    user_answers = [int(request.form[f'answer{i["id"]}']) for i in questions]
-    score = evaluate_answers(user_answers)
-    return render_template('result.html', score=score)
+    score=request.json['score']
+    print(score)
+    return redirect(url_for('result', score=score))
 
-def evaluate_answers(user_answers):
-    score = 0
-    for question, user_answer in zip(questions, user_answers):
-        if user_answer == question["answer"]:
-            score += 1
-    return score
-@app.route('/mycourse',methods=['POST','GET'])
+@app.route('/mycourse',methods=['POST'])
 def mycourses():
     if request.method=='POST':
        db.session.commit()
     return render_template("mycourses.html",user=session['uname'])
-@app.route('/result')
-def result():
-    if request.method=='POST':
-       db.session.commit()
-    return render_template('result.html')
+
+@app.route('/result/<int:score>',methods=['GET'])
+def result(score):
+    print("hello")
+    return render_template('result.html',score=score)
+
 @app.route('/service',methods=['POST','GET'])
 def service():
     if request.method=='POST':
