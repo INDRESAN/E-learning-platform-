@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)) url('https://wallpapercave.com/wp/wp2939993.jpg');
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    width: 461px;
+    padding: 74px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+#myVideo {
+  z-index: 800;
+  width:100%;
+  height:100%;
+}
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .checkbox {
+    margin-bottom: 15px;
+  }
+  
+  .checkbox label {
+    margin-right: 5px;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #45A049;
+  }
+  
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  a:hover {
+    color: #3e8e41;
+  }

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <style>
+        /* Reset CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #666;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .quiz-result {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .quiz-result h1 {
+            margin-bottom: 20px;
+        }
+        .quiz-result p {
+            margin-bottom: 10px;
+        }
+        .quiz-result a {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .quiz-result a:hover {
+            background-color: #666;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cloud-based E-Learning Platform</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('course')}}">Courses</a></li>
+            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('service')}}">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="quiz-result">
+            <h1>Quiz Result</h1>
+            <p>You scored {{score}} out of 10.</p>
+            <a href="{{url_for('quiz')}}">Take the quiz again</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>

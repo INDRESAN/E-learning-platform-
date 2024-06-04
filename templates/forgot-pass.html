@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: linear-gradient(120deg,#a0d2eb,#8458b3,#d0b0f4);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+    h1{
+            text-align: center;
+            color:#441d6d;
+            text-shadow: 7px 7px 7px #636161;
+            font-family: sans-serif;
+            font-size: 80px;
+            margin-right: 87px;
+        
+        }
+    label {
+        margin-left: 35%;
+    }
+</style>
+<body>
+    <div class="container">
+    <h1>WANNA UPDATE </h1>
+    <h1> YOUR PASSWORD</h1><br>
+    <form action="{{url_for('forgot')}} " method="POST">
+    <div class="row align-items-center g-3">
+        <div class="col-auto">
+    <h2><label for="fpd">USERNAME:</label>
+    <input type="text" placeholder="username",id="user">
+    <input type="submit" value="send" name="usn" id="usn"></h2>
+    <h2><label for="upd">NEW-PASSWORD:</label>
+    <input type="text" placeholder="update pass" id="upass">
+    <input type="submit"  name="upass" id="upass"></h2>
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Basic styling */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
+    nav {
+        background-color: #f4f4f4;
+        padding: 10px;
+    }
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+    nav ul li a:hover {
+        color: #666;
+    }
+    footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
+<body>
+    <header>
+        <h1>Cloud-based E-Learning Platform</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('course')}}">Courses</a></li>
+            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('service')}}">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Contact Us</h1>
+    <p>
+        If you have any questions or comments, please don't hesitate to contact us. Our team is always happy to help. You can reach us through the following channels: 
+
+    </p>
+    <ul>
+        <li>Email: <a href="mailto:QpTqP@example.com">QpTqP@example.com</a></li>
+        <li>Phone: 123-456-7890</li>            
+    </ul>
+    <footer>
+        <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
+    </footer>
+
+
+</body>
+</html>

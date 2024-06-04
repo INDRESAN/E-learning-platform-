@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-based E-Learning Platform</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #666;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container p{
+            font-size: 90%;
+            font: 1em sans-serif;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cloud-based E-Learning Platform</h1>
+    </header>
+    <nav>
+        <ul>
+          
+            <li><a href="{{url_for('course')}}">Courses</a></li>
+            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('service')}}">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Welcome to Our E-Learning Platform</h2>
+        <p>Empower Your Learning Journey
+            Welcome to [Your E-Learning Platform Name], your premier destination for online education! Whether you're a student aiming to excel in your studies, a professional looking to advance your career, or a lifelong learner pursuing new passions, our platform is designed to meet your educational needs with a comprehensive range of courses and resources.</p>
+        <p> Why Choose Us?
+            Diverse Course Catalog: Explore a vast array of subjects and disciplines, from technology and business to arts and humanities. Our courses are crafted by industry experts and experienced educators to ensure you gain valuable and up-to-date knowledge.
+            
+            Flexible Learning: Learn at your own pace with our self-paced courses, or join live sessions for real-time interaction with instructors and peers. Our platform is accessible anytime, anywhere, allowing you to fit learning into your busy schedule.
+            
+            Interactive Experience: Engage with interactive content, including videos, quizzes, assignments, and discussion forums. Our tools are designed to enhance your understanding and retention of the material.
+            
+            Certification and Recognition: Earn certificates upon completion of courses to showcase your achievements. Our certifications are recognized by top employers and institutions, helping you stand out in the job market.</p>
+        <p>  
+            Our Features
+            User-Friendly Interface: Navigate through our intuitive platform with ease. Whether you’re a tech-savvy individual or new to online learning, our design ensures a smooth and enjoyable experience.
+            
+            Expert Instructors: Learn from the best in the field. Our instructors bring a wealth of knowledge and practical experience to each course, providing you with insights and skills that are immediately applicable.
+            
+            Community and Support: Join a vibrant community of learners from around the world. Participate in discussions, group projects, and networking opportunities. Our dedicated support team is always here to assist you with any questions or technical issues.
+        </p>
+        <p>
+            Join Us Today!
+            Start your learning journey with [Your E-Learning Platform Name] today and unlock a world of opportunities. Sign up now to explore our courses, engage with expert instructors, and connect with a global community of learners. Your path to knowledge and success begins here!
+            
+        </p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
+    </footer>
+</body>
+</html>
