@@ -93,17 +93,18 @@
     </header>
     <nav>
         <ul>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="mycourses.html">MyCourses</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service.html">Contact</a></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('course')}}">Courses</a></li>
+            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>
     </nav>
     <main>
         <div class="quiz-result">
             <h1>Quiz Result</h1>
             <p>You scored {{score}} out of 10.</p>
-            <a href="quiz.html">Take the quiz again</a>
+            <a href="{{url_for('quiz')}}">Take the quiz again</a>
         </div>
     </main>
     <footer>

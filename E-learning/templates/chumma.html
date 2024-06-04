@@ -3,92 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizzes - Introduction to Programming</title>
-    <style>
-        /* Basic styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            color: #666;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        .quiz {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .question {
-            margin-bottom: 10px;
-        }
-        .answers {
-            list-style-type: none;
-            padding: 0;
-        }
-        .answer {
-            margin-bottom: 5px;
-        }
-        .answer input[type="radio"] {
-            margin-right: 10px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Cloud-based E-Learning Platform</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="{{url_for('home')}}">Home</a></li>
-            <li><a href="{{url_for('course')}}">Courses</a></li>
-            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
-            <li><a href="{{url_for('about')}}">About</a></li>
-            <li><a href="{{url_for('service')}}">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div class="quiz">
-            <h2>Quiz - Introduction to Programming</h2>
-            <form id="quizForm">
-                <!-- Questions will be injected here by JavaScript -->
-                <button type="button" onclick="submitQuiz()">Submit</button>
-            </form>
-        </div>
-    </div>
-
+    <title>Quiz Evaluation</title>
     <script>
         const questions = [
             {
@@ -203,55 +118,52 @@
             }
         ];
 
-        function loadQuestions() {
-            const form = document.getElementById('quizForm');
+        function evaluateAnswers(userAnswers) {
+            let score = 0;
             questions.forEach((question, index) => {
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                questionDiv.innerHTML = `
-                    <p>Question: ${question.question}</p>
-                    <ul class="answers">
-                        <li class="answer">
-                            <input type="radio" name="answer${index}" value="0" required> ${question.options[0]}
-                        </li>
-                        <li class="answer">
-                            <input type="radio" name="answer${index}" value="1" required> ${question.options[1]}
-                        </li>
-                        <li class="answer">
-                            <input type="radio" name="answer${index}" value="2" required> ${question.options[2]}
-                        </li>
-                        <li class="answer">
-                            <input type="radio" name="answer${index}" value="3" required> ${question.options[3]}
-                        </li>
-                    </ul>
-                `;
-                form.insertBefore(questionDiv, form.lastElementChild);
+                if (userAnswers[index] === question.answer) {
+                    score++;
+                }
             });
+            return score;
         }
 
         function submitQuiz() {
-            const form = document.getElementById('quizForm');
-            const formData = new FormData(form);
             const userAnswers = [];
             questions.forEach((question, index) => {
-                userAnswers.push(parseInt(formData.get(`answer${index}`)));
+                const selectedOption = document.querySelector(`input[name="question${question.id}"]:checked`);
+                if (selectedOption) {
+                    userAnswers.push(parseInt(selectedOption.value));
+                } else {
+                    userAnswers.push(null);  // No answer selected
+                }
             });
-
-            fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ userAnswers }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                window.location.href = `/result?score=${data.score}`;
-            })
-            .catch(error => console.error('Error:', error));
+            const score = evaluateAnswers(userAnswers);
+            (`Your score is ${score} out of ${questions.length}`);
         }
-
-        window.onload = loadQuestions;
+    </script>
+</head>
+<body>
+    <h1>Quiz</h1>
+    <form id="quizForm">
+        <div id="quizContainer"></div>
+        <button type="button" onclick="submitQuiz()">Submit</button>
+    </form>
+    <script>
+        const quizContainer = document.getElementById('quizContainer');
+        questions.forEach(question => {
+            const questionDiv = document.createElement('div');
+            questionDiv.innerHTML = `
+                <p>${question.question}</p>
+                ${question.options.map((option, index) => `
+                    <label>
+                        <input type="radio" name="question${question.id}" value="${index}">
+                        ${option}
+                    </label><br>
+                `).join('')}
+            `;
+            quizContainer.appendChild(questionDiv);
+        });
     </script>
 </body>
 </html>

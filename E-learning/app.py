@@ -13,8 +13,71 @@ class SQLAlchemy(_BaseSQLAlchemy):
         super(SQLAlchemy, self).apply_pool_defaults(self, app, options)
         options["pool_pre_ping"] = True
 
-# run database
-questions=[
+
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fullname = db.Column(db.String(120), nullable=False)
+    password = db.Column(db.String(120), nullable=False)
+    title = db.Column(db.String(120))
+    grades = db.Column(db.String(120), nullable=False)
+
+with app.app_context():
+    db.create_all()
+
+app.secret_key="superhighsecretlock"
+
+@app.route('/',methods=['POST','GET'])
+def login():
+    msg=''
+    if request.method=='POST':
+        uname = request.form["uname"]
+        pwd = request.form["pswd"]
+        auth = User.query.filter_by(fullname=uname,password=pwd).all()
+        if auth:
+            session['uname']=uname
+            session['pwd']=pwd
+            return redirect(url_for('home'))
+        else:
+            msg="Invalid Username/Password"
+    return render_template("login.html",message=msg)
+
+@app.route('/signup',methods=['POST','GET'])
+def signup():
+    if request.method=="POST":
+        uname = request.form["uname"]
+        pwd = request.form["pswd"]
+        user = User(password=pwd, fullname=uname,grades=0)
+        db.session.add(user)
+        db.session.commit()
+        if user:
+            session['uname']=uname
+            session['pwd']=pwd
+            return redirect(url_for('home'))
+    return render_template('login.html')
+
+
+@app.route('/home',methods=['POST','GET'])
+def home():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template('home.html',user=session['uname'])
+
+
+@app.route('/course',methods=['POST','GET'])
+def course():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template("courses.html")
+
+@app.route('/course_details',methods=['POST','GET'])
+def course_details_1():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template("course_details1.html")
+
+questions = [
     {
         "id": 1,
         "question": "What is the primary purpose of programming languages?",
@@ -127,99 +190,44 @@ questions=[
     }
 ]
 
-db = SQLAlchemy(app)
-
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    fullname = db.Column(db.String(120), nullable=False)
-    password = db.Column(db.String(120), nullable=False)
-    title = db.Column(db.String(120))
-    grades = db.Column(db.String(120), nullable=False)
-
-with app.app_context():
-    db.create_all()
-
-app.secret_key="superhighsecretlock"
-
-@app.route('/',methods=['POST','GET'])
-def login():
-    msg=''
-    if request.method=='POST':
-        uname = request.form["uname"]
-        pwd = request.form["pswd"]
-        auth = User.query.filter_by(fullname=uname,password=pwd).all()
-        if auth:
-            session['uname']=uname
-            session['pwd']=pwd
-            return redirect(url_for('home'))
-        else:
-            msg="Invalid Username/Password"
-    return render_template("login.html",message=msg)
-
-@app.route('/signup',methods=['POST','GET'])
-def signup():
-    if request.method=="POST":
-        uname = request.form["uname"]
-        pwd = request.form["pswd"]
-        user = User(password=pwd, fullname=uname,grades=0)
-        db.session.add(user)
-        db.session.commit()
-        if user:
-            session['uname']=uname
-            session['pwd']=pwd
-            return redirect(url_for('home'))
-    return render_template('login.html')
-
-
-@app.route('/home',methods=['POST','GET'])
-def home():
-    if request.method=='POST':
-       db.session.commit()
-    return render_template("home.html",user=session['uname'])
-
-
-@app.route('/course',methods=['POST','GET'])
-def course():
-    if request.method=='POST':
-       db.session.commit()
-    return render_template("courses.html")
-
-@app.route('/course_details',methods=['POST','GET'])
-def course_details_1():
-    if request.method=='POST':
-       db.session.commit()
-    return render_template("course_details1.html")
-
-@app.route('/quiz')
+@app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
     if request.method=='POST':
        db.session.commit()
     return render_template('quizzes.html', questions=questions)
 
-
-
-@app.route('/submit', methods=['POST','GET'])
+@app.route('/submit', methods=['POST'])
 def submit():
-    # if request.method=='POST':
-    #     score = 0
-    #     print(request.form.getlist('a'))
-    #     for question in questions:
-    #         answer = int(request.form.get(f'question{i}'))
-    #         if answer == question['answer']:
-    #             score += 1
-    return render_template('result.html', score=6, total=len(questions))
+    user_answers = [int(request.form[f'answer{i["id"]}']) for i in questions]
+    score = evaluate_answers(user_answers)
+    return render_template('result.html', score=score)
 
+def evaluate_answers(user_answers):
+    score = 0
+    for question, user_answer in zip(questions, user_answers):
+        if user_answer == question["answer"]:
+            score += 1
+    return score
 @app.route('/mycourse',methods=['POST','GET'])
-def mycourse():
+def mycourses():
     if request.method=='POST':
        db.session.commit()
-    return render_template("home.html",user=session['uname'])
+    return render_template("mycourses.html",user=session['uname'])
 @app.route('/result')
 def result():
     if request.method=='POST':
        db.session.commit()
     return render_template('result.html')
-
+@app.route('/service',methods=['POST','GET'])
+def service():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template("service.html")
+@app.route('/about',methods=['POST','GET'])
+def about():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template("about.html")
 
 if __name__ == '__main__':
     app.run(debug=True,port=5001)

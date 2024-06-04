@@ -65,11 +65,11 @@
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="#">My Courses</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="{{ url_for('index.html')}}">Home</a></li>
+            <li><a href="{{ url_for('course')}}">Courses</a></li>
+            <li><a href="{{ url_for('mycourses')}}">MyCourses</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>
     </nav>
     <div class="container">

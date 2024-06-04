@@ -11,10 +11,11 @@
     </header>
     <nav>
         <ul>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="mycourses.html">MyCourses</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service.html">Contact</a></li>
+            <li><a href="{{url_for('home')}}">Home</a></li>
+            <li><a href="{{url_for('course')}}">Courses</a></li>
+            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>
     </nav>
     <p>

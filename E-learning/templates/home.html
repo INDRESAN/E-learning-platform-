@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud-based E-Learning Platform</title>
     <style>
-        /* Basic styling */
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -67,10 +67,10 @@
     <nav>
         <ul>
           
-            <li><a href="{{ url_for('course')}}">Courses</a></li>
-            <li><a href="mycourses.html">MyCourses</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service.html">Contact</a></li>
+            <li><a href="{{url_for('course')}}">Courses</a></li>
+            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
+            <li><a href="{{url_for('about')}}">About</a></li>
+            <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>
     </nav>
     <div class="container">
