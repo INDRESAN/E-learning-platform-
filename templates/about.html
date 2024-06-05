@@ -5,6 +5,53 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    /* Basic styling */
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #666;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+</style>
 <body>
     <header>
         <h1>Cloud-based E-Learning Platform</h1>
@@ -18,9 +65,9 @@
             <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>
     </nav>
-    <p>
-        About Us
-Welcome to [Your E-Learning Platform Name], where education meets innovation. We are a leading online learning platform dedicated to providing high-quality education accessible to everyone, everywhere. Our mission is to empower individuals through learning by offering a wide range of courses designed to help you achieve your personal and professional goals.
+    <h1 style="text-align: center;">
+        About Us</h1>
+<p>Welcome to [Your E-Learning Platform Name], where education meets innovation. We are a leading online learning platform dedicated to providing high-quality education accessible to everyone, everywhere. Our mission is to empower individuals through learning by offering a wide range of courses designed to help you achieve your personal and professional goals.
 </p>
 <p>
 Our Mission
@@ -54,5 +101,8 @@ Innovation: We embrace innovation in education by utilizing the latest technolog
 Join Us
 We invite you to join our community of learners and embark on a journey of discovery and growth. Whether you are looking to advance your career, acquire new skills, or pursue a passion, [Your E-Learning Platform Name] is here to support you every step of the way. Together, we can achieve great things.
 </p>
+<footer>
+    <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
+</footer>
 </body>
 </html>

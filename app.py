@@ -88,7 +88,7 @@ def submit():
     print(score)
     return redirect(url_for('result', score=score))
 
-@app.route('/mycourse',methods=['POST'])
+@app.route('/mycourse',methods=['POST','GET'])
 def mycourses():
     if request.method=='POST':
        db.session.commit()
