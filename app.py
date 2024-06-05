@@ -80,7 +80,7 @@ def course_details_1():
 def quiz():
     if request.method=='POST':
        db.session.commit()
-    return render_template('quizzes.html', questions=questions)
+    return render_template('quizzes.html')
 
 @app.route('/submit', methods=['POST','GET'])
 def submit():
