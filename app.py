@@ -76,11 +76,50 @@ def course_details_1():
        db.session.commit()
     return render_template("course_details1.html")
 
+@app.route('/course_details2',methods=['POST','GET'])
+def course_details_2():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template("course_details2.html")
+
+@app.route('/course_details3',methods=['POST','GET'])   
+def course_details_3():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template("course_details3.html")
+
+@app.route('/course_details4',methods=['POST','GET'])
+def service():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template('services.html')
+
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
     if request.method=='POST':
        db.session.commit()
     return render_template('quizzes.html')
+
+@app.route('/quiz1', methods=['GET', 'POST'])
+def quiz1():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template('quiz1.html')
+
+@app.route('/quiz2', methods=['GET', 'POST'])
+def quiz2():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template('quiz2.html')
+
+@app.route('/quiz3', methods=['GET', 'POST'])
+def quiz3():
+    if request.method=='POST':
+       db.session.commit()
+    return render_template('quiz3.html')
+
+
+
 
 @app.route('/submit', methods=['POST','GET'])
 def submit():
@@ -88,16 +127,20 @@ def submit():
     print(score)
     return redirect(url_for('result', score=score))
 
+
+
 @app.route('/mycourse',methods=['POST','GET'])
 def mycourses():
     if request.method=='POST':
        db.session.commit()
     return render_template("mycourses.html",user=session['uname'])
 
+
 @app.route('/result/<int:score>',methods=['GET'])
 def result(score):
     print("hello")
     return render_template('result.html',score=score)
+
 
 @app.route('/service',methods=['POST','GET'])
 def service():

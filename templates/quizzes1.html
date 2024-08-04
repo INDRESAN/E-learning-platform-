@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizzes - Introduction to Programming</title>
+    <title>Quizzes - Data Science Fundamentals</title>
     <style>
         /* Basic styling */
         body {
@@ -82,7 +82,7 @@
 </head>
 <body>
     <header>
-        <h1>Cloud-based E-Learning Platform</h1>
+        <h1>Data Science Fundamentals Quiz</h1>
     </header>
     <nav>
         <ul>
@@ -97,113 +97,113 @@
         const questions = [
             {
                 id: 1,
-                question: "What is the primary purpose of programming languages?",
+                question: "What is data science?",
                 options: [
-                    "To enable computers to understand human emotions",
-                    "To enable humans to communicate instructions to computers",
-                    "To enhance graphics and sound in video games",
-                    "To design computer hardware"
+                    "A field focused on the extraction of knowledge from data",
+                    "A branch of psychology",
+                    "A type of computer hardware",
+                    "An art form"
                 ],
-                answer: 1
+                answer: 0
             },
             {
                 id: 2,
-                question: "Which language was the earliest form of programming used to communicate directly with a computer's hardware?",
+                question: "What is the first step in the data science process?",
                 options: [
-                    "Assembly Language",
-                    "High-Level Language",
-                    "Machine Language",
-                    "Fourth-Generation Language"
+                    "Data Collection",
+                    "Model Building",
+                    "Problem Definition",
+                    "Data Cleaning"
                 ],
                 answer: 2
             },
             {
                 id: 3,
-                question: "What is an example of a high-level programming language developed for scientific computing in 1957?",
+                question: "Which of the following is NOT a type of data?",
                 options: [
-                    "COBOL",
-                    "FORTRAN",
-                    "Python",
-                    "JavaScript"
+                    "Structured Data",
+                    "Unstructured Data",
+                    "Semi-structured Data",
+                    "Fragmented Data"
                 ],
-                answer: 1
+                answer: 3
             },
             {
                 id: 4,
-                question: "Which type of programming language emerged in the 1970s and 1980s and is designed to be closer to natural human language?",
+                question: "What is the purpose of data cleaning?",
                 options: [
-                    "Machine Language",
-                    "Assembly Language",
-                    "Fourth-Generation Languages",
-                    "Low-Level Languages"
+                    "To remove incorrect and inconsistent data",
+                    "To enhance data visualization",
+                    "To store data in a database",
+                    "To create machine learning models"
                 ],
-                answer: 2
+                answer: 0
             },
             {
                 id: 5,
-                question: "Which programming paradigm is based on the concept of objects, which are instances of classes encapsulating data and behavior?",
+                question: "Which technique is used to convert categorical variables into numerical values?",
                 options: [
-                    "Procedural Languages",
-                    "Functional Languages",
-                    "Object-Oriented Languages",
-                    "Scripting Languages"
+                    "Normalization",
+                    "Standardization",
+                    "Encoding",
+                    "Imputation"
                 ],
                 answer: 2
             },
             {
                 id: 6,
-                question: "Which of the following is NOT a component of programming languages?",
+                question: "What is the main goal of exploratory data analysis (EDA)?",
                 options: [
-                    "Syntax",
-                    "Semantics",
-                    "Compilers",
-                    "Control Structures"
-                ],
-                answer: 2
-            },
-            {
-                id: 7,
-                question: "Which language is known for its high-level, interpreted nature and is extensively used in data analysis and machine learning?",
-                options: [
-                    "C++",
-                    "JavaScript",
-                    "Python",
-                    "Ruby"
-                ],
-                answer: 2
-            },
-            {
-                id: 8,
-                question: "Which language was designed by Apple for performance and safety, specifically for iOS and macOS app development?",
-                options: [
-                    "C#",
-                    "Swift",
-                    "Ruby",
-                    "Kotlin"
+                    "To build predictive models",
+                    "To explore data to uncover patterns and insights",
+                    "To deploy machine learning models",
+                    "To clean the data"
                 ],
                 answer: 1
             },
             {
-                id: 9,
-                question: "What is a trend in programming languages that focuses on supporting multiple programming paradigms for greater flexibility?",
+                id: 7,
+                question: "Which machine learning algorithm is typically used for classification tasks?",
                 options: [
-                    "Development of Quantum Computing Languages",
-                    "Rise of Multi-Paradigm Languages",
-                    "Improved Performance and Efficiency",
-                    "Low-Code and No-Code Platforms"
+                    "Linear Regression",
+                    "Decision Trees",
+                    "K-Means Clustering",
+                    "PCA"
+                ],
+                answer: 1
+            },
+            {
+                id: 8,
+                question: "What is cross-validation used for?",
+                options: [
+                    "To evaluate the performance of a model",
+                    "To clean the data",
+                    "To collect data",
+                    "To encode categorical variables"
+                ],
+                answer: 0
+            },
+            {
+                id: 9,
+                question: "Which tool is commonly used for data visualization in Python?",
+                options: [
+                    "NumPy",
+                    "matplotlib",
+                    "scikit-learn",
+                    "TensorFlow"
                 ],
                 answer: 1
             },
             {
                 id: 10,
-                question: "Which language is gaining traction due to its emphasis on memory safety and prevention of common programming errors that lead to security vulnerabilities?",
+                question: "What is feature engineering?",
                 options: [
-                    "Rust",
-                    "C",
-                    "Prolog",
-                    "SQL"
+                    "The process of collecting data",
+                    "Creating new features or modifying existing ones to improve model performance",
+                    "The deployment of machine learning models",
+                    "Cleaning and preprocessing data"
                 ],
-                answer: 0
+                answer: 1
             }
         ];
 
@@ -227,14 +227,14 @@
                     userAnswers.push(null);  // No answer selected
                 }
             });
-            const score = evaluateAnswers(userAnswers)
-            window.location.href = "result/"+score;
+            const score = evaluateAnswers(userAnswers);
+            window.location.href = "result/" + score;
         }
     </script>
     <div class="container">
         <h1>Quiz</h1>
         <form id="quizForm">
-            <div id="quizContainer" class="quiz"></div>
+            <div id="quizContainer"></div>
             <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
         </form>
     </div>
@@ -242,11 +242,10 @@
         const quizContainer = document.getElementById('quizContainer');
         questions.forEach(question => {
             const questionDiv = document.createElement('div');
-            questionDiv.classList.add('question');
             questionDiv.innerHTML = `
                 <p>${question.question}</p>
                 ${question.options.map((option, index) => `
-                    <label class="answer">
+                    <label>
                         <input type="radio" name="question${question.id}" value="${index}">
                         ${option}
                     </label><br>

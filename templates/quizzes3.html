@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quizzes - Introduction to Programming</title>
+    <title>Quizzes - Artificial Intelligence</title>
     <style>
         /* Basic styling */
         body {
@@ -78,11 +78,33 @@
         .submit-btn:hover {
             background-color: #0056b3;
         }
+        .course {
+            margin: 20px 0;
+        }
+        .course h3 {
+            margin-bottom: 5px;
+        }
+        .course p {
+            margin-bottom: 10px;
+        }
+        .course a {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #28a745;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .course a:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Cloud-based E-Learning Platform</h1>
+        <h1>Artificial Intelligence Quiz</h1>
     </header>
     <nav>
         <ul>
@@ -97,111 +119,111 @@
         const questions = [
             {
                 id: 1,
-                question: "What is the primary purpose of programming languages?",
+                question: "What is artificial intelligence?",
                 options: [
-                    "To enable computers to understand human emotions",
-                    "To enable humans to communicate instructions to computers",
-                    "To enhance graphics and sound in video games",
-                    "To design computer hardware"
+                    "A branch of computer science dealing with the simulation of intelligent behavior in computers",
+                    "A type of hardware",
+                    "A programming language",
+                    "A database management system"
                 ],
-                answer: 1
+                answer: 0
             },
             {
                 id: 2,
-                question: "Which language was the earliest form of programming used to communicate directly with a computer's hardware?",
+                question: "Which of the following is a type of AI?",
                 options: [
-                    "Assembly Language",
-                    "High-Level Language",
-                    "Machine Language",
-                    "Fourth-Generation Language"
+                    "Reactive machines",
+                    "Deep learning",
+                    "Neural networks",
+                    "All of the above"
                 ],
-                answer: 2
+                answer: 3
             },
             {
                 id: 3,
-                question: "What is an example of a high-level programming language developed for scientific computing in 1957?",
+                question: "What does NLP stand for in AI?",
                 options: [
-                    "COBOL",
-                    "FORTRAN",
-                    "Python",
-                    "JavaScript"
+                    "Neural Language Processing",
+                    "Natural Language Processing",
+                    "Network Learning Processing",
+                    "Natural Learning Programming"
                 ],
                 answer: 1
             },
             {
                 id: 4,
-                question: "Which type of programming language emerged in the 1970s and 1980s and is designed to be closer to natural human language?",
+                question: "What is a neural network?",
                 options: [
-                    "Machine Language",
-                    "Assembly Language",
-                    "Fourth-Generation Languages",
-                    "Low-Level Languages"
+                    "A network of physical neurons",
+                    "A set of algorithms modeled after the human brain",
+                    "A type of database",
+                    "A data structure used in programming"
                 ],
-                answer: 2
+                answer: 1
             },
             {
                 id: 5,
-                question: "Which programming paradigm is based on the concept of objects, which are instances of classes encapsulating data and behavior?",
+                question: "Which of the following is an application of AI?",
                 options: [
-                    "Procedural Languages",
-                    "Functional Languages",
-                    "Object-Oriented Languages",
-                    "Scripting Languages"
+                    "Self-driving cars",
+                    "Voice assistants",
+                    "Recommendation systems",
+                    "All of the above"
                 ],
-                answer: 2
+                answer: 3
             },
             {
                 id: 6,
-                question: "Which of the following is NOT a component of programming languages?",
+                question: "What is machine learning?",
                 options: [
-                    "Syntax",
-                    "Semantics",
-                    "Compilers",
-                    "Control Structures"
+                    "A method of data analysis that automates analytical model building",
+                    "A type of artificial neural network",
+                    "A programming language",
+                    "A type of database"
                 ],
-                answer: 2
+                answer: 0
             },
             {
                 id: 7,
-                question: "Which language is known for its high-level, interpreted nature and is extensively used in data analysis and machine learning?",
+                question: "What is deep learning?",
                 options: [
-                    "C++",
-                    "JavaScript",
-                    "Python",
-                    "Ruby"
+                    "A subset of machine learning involving neural networks with many layers",
+                    "A type of reinforcement learning",
+                    "A programming language",
+                    "A method of natural language processing"
                 ],
-                answer: 2
+                answer: 0
             },
             {
                 id: 8,
-                question: "Which language was designed by Apple for performance and safety, specifically for iOS and macOS app development?",
+                question: "Which of the following is a popular machine learning framework?",
                 options: [
-                    "C#",
-                    "Swift",
-                    "Ruby",
-                    "Kotlin"
+                    "TensorFlow",
+                    "HTML",
+                    "JavaScript",
+                    "SQL"
                 ],
-                answer: 1
+                answer: 0
             },
             {
                 id: 9,
-                question: "What is a trend in programming languages that focuses on supporting multiple programming paradigms for greater flexibility?",
+                question: "What is reinforcement learning?",
                 options: [
-                    "Development of Quantum Computing Languages",
-                    "Rise of Multi-Paradigm Languages",
-                    "Improved Performance and Efficiency",
-                    "Low-Code and No-Code Platforms"
+                    "A type of machine learning where an agent learns to make decisions by receiving rewards or penalties",
+                    "A method of supervised learning",
+                    "A data processing technique",
+                    "A type of database management"
                 ],
-                answer: 1
+                answer: 0
             },
             {
                 id: 10,
-                question: "Which language is gaining traction due to its emphasis on memory safety and prevention of common programming errors that lead to security vulnerabilities?",
+                question: "What is the Turing Test?",
                 options: [
-                    "Rust",
-                    "C",
-                    "Prolog",
-                    "SQL"
+                    "A test to determine whether a machine can exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human",
+                    "A test to measure the processing speed of a computer",
+                    "A programming challenge",
+                    "A type of neural network"
                 ],
                 answer: 0
             }
@@ -227,14 +249,14 @@
                     userAnswers.push(null);  // No answer selected
                 }
             });
-            const score = evaluateAnswers(userAnswers)
-            window.location.href = "result/"+score;
+            const score = evaluateAnswers(userAnswers);
+            window.location.href = "result/" + score;
         }
     </script>
     <div class="container">
         <h1>Quiz</h1>
         <form id="quizForm">
-            <div id="quizContainer" class="quiz"></div>
+            <div id="quizContainer"></div>
             <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
         </form>
     </div>
@@ -242,11 +264,10 @@
         const quizContainer = document.getElementById('quizContainer');
         questions.forEach(question => {
             const questionDiv = document.createElement('div');
-            questionDiv.classList.add('question');
             questionDiv.innerHTML = `
                 <p>${question.question}</p>
                 ${question.options.map((option, index) => `
-                    <label class="answer">
+                    <label>
                         <input type="radio" name="question${question.id}" value="${index}">
                         ${option}
                     </label><br>
