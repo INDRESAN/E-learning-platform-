@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Result</title>
     <style>
-        /* Reset CSS */
-        * {
+            /* Reset CSS */
+            * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #f0f4f8; /* Very light blue-gray background */
+            color: #334e68; /* Dark gray-blue text */
             line-height: 1.6;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: #333;
+            background-color: #5a6f7c; /* Soft gray-blue */
             color: #fff;
             padding: 20px 0;
             text-align: center;
         }
         nav {
-            background-color: #fff;
+            background-color: #fff; /* Light gray */
             padding: 10px 0;
             text-align: center;
         }
@@ -41,22 +41,23 @@
         }
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: #334e68; /* Dark gray-blue */
             font-weight: bold;
         }
         nav ul li a:hover {
-            color: #666;
+            color: #3d5a80; /* Soft dark blue */
         }
         main {
             padding: 20px;
             text-align: center;
         }
         .quiz-result {
-            background-color: #fff;
+            background-color: #ffffff; /* White background */
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
             padding: 20px;
             margin-bottom: 20px;
+            border: 1px solid #9eb3c2; /* Light blue border */
         }
         .quiz-result h1 {
             margin-bottom: 20px;
@@ -66,7 +67,7 @@
         }
         .quiz-result a {
             display: inline-block;
-            background-color: #333;
+            background-color: #3d5a80; /* Soft dark blue */
             color: #fff;
             padding: 10px 20px;
             text-decoration: none;
@@ -74,10 +75,10 @@
             transition: background-color 0.3s ease;
         }
         .quiz-result a:hover {
-            background-color: #666;
+            background-color: #293a5a; /* Darker blue on hover */
         }
         footer {
-            background-color: #333;
+            background-color: #5a6f7c; /* Soft gray-blue */
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -95,7 +96,6 @@
         <ul>
             <li><a href="{{url_for('home')}}">Home</a></li>
             <li><a href="{{url_for('course')}}">Courses</a></li>
-            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
             <li><a href="{{url_for('about')}}">About</a></li>
             <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>

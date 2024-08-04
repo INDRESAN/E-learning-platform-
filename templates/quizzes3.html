@@ -5,101 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizzes - Artificial Intelligence</title>
     <style>
-        /* Basic styling */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-        }
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            color: #666;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        .quiz {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .question {
-            margin-bottom: 10px;
-        }
-        .answers {
-            list-style-type: none;
-            padding: 0;
-        }
-        .answer {
-            margin-bottom: 5px;
-        }
-        .answer input[type="radio"] {
-            margin-right: 10px;
-        }
-        .submit-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #007BFF;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-        }
-        .submit-btn:hover {
-            background-color: #0056b3;
-        }
-        .course {
-            margin: 20px 0;
-        }
-        .course h3 {
-            margin-bottom: 5px;
-        }
-        .course p {
-            margin-bottom: 10px;
-        }
-        .course a {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #28a745;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .course a:hover {
-            background-color: #218838;
-        }
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; /* Very light blue-gray background */
+    color: #334e68; /* Dark gray-blue text */
+}
+
+header {
+    background-color: #5a6f7c; /* Soft gray-blue */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav {
+    background-color: #f4f4f4; /* Light gray */
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #334e68; /* Dark gray-blue */
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #3d5a80; /* Soft dark blue */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    border: 1px solid #9eb3c2; /* Light blue border */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.quiz {
+    border: 1px solid #9eb3c2; /* Light blue border */
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Very light gray background */
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3d5a80; /* Soft dark blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #293a5a; /* Darker blue on hover */
+}
     </style>
 </head>
 <body>
@@ -110,7 +91,6 @@
         <ul>
             <li><a href="{{url_for('home')}}">Home</a></li>
             <li><a href="{{url_for('course')}}">Courses</a></li>
-            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
             <li><a href="{{url_for('about')}}">About</a></li>
             <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>

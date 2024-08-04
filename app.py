@@ -104,21 +104,19 @@ def quiz():
 def quiz1():
     if request.method=='POST':
        db.session.commit()
-    return render_template('quiz1.html')
+    return render_template('quizzes1.html')
 
 @app.route('/quiz2', methods=['GET', 'POST'])
 def quiz2():
     if request.method=='POST':
        db.session.commit()
-    return render_template('quiz2.html')
+    return render_template('quizzes2.html')
 
 @app.route('/quiz3', methods=['GET', 'POST'])
 def quiz3():
     if request.method=='POST':
        db.session.commit()
-    return render_template('quiz3.html')
-
-
+    return render_template('quizzes3.html')
 
 
 @app.route('/submit', methods=['POST','GET'])
@@ -126,15 +124,6 @@ def submit():
     score=request.json['score']
     print(score)
     return redirect(url_for('result', score=score))
-
-
-
-@app.route('/mycourse',methods=['POST','GET'])
-def mycourses():
-    if request.method=='POST':
-       db.session.commit()
-    return render_template("mycourses.html",user=session['uname'])
-
 
 @app.route('/result/<int:score>',methods=['GET'])
 def result(score):

@@ -3,45 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    /* Basic styling */
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-    header {
-        background-color: #333;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-    }
-    nav {
-        background-color: #f4f4f4;
-        padding: 10px;
-    }
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-    }
-    nav ul li {
-        display: inline;
-        margin-right: 20px;
-    }
-    nav ul li a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-    }
-    nav ul li a:hover {
-        color: #666;
-    }
-    footer {
-            background-color: #333;
+    <title>Contact Us - Cloud-based E-Learning Platform</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Very light blue-gray background */
+            color: #334e68; /* Dark gray-blue text */
+        }
+        header {
+            background-color: #5a6f7c; /* Soft gray-blue */
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #f4f4f4; /* Light gray */
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #334e68; /* Dark gray-blue */
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #3d5a80; /* Soft dark blue */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            border: 1px solid #9eb3c2; /* Light blue border */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        .quiz {
+            border: 1px solid #9eb3c2; /* Light blue border */
+            border-radius: 5px;
+            padding: 20px;
+            background-color: #f9f9f9; /* Very light gray background */
+        }
+        .submit-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #3d5a80; /* Soft dark blue */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #293a5a; /* Darker blue on hover */
+        }
+        footer {
+            background-color: #5a6f7c; /* Soft gray-blue */
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -49,7 +80,29 @@
             bottom: 0;
             width: 100%;
         }
-</style>
+        .container p {
+            font-size: 90%;
+            font: 1em sans-serif;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .contact-info {
+            margin-top: 20px;
+        }
+        .contact-info ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .contact-info ul li {
+            margin-bottom: 10px;
+        }
+        .contact-info ul li svg {
+            vertical-align: middle;
+            margin-left: 5px;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
 <body>
     <header>
         <h1>Cloud-based E-Learning Platform</h1>
@@ -58,24 +111,32 @@
         <ul>
             <li><a href="{{url_for('home')}}">Home</a></li>
             <li><a href="{{url_for('course')}}">Courses</a></li>
-            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
             <li><a href="{{url_for('about')}}">About</a></li>
             <li><a href="{{url_for('service')}}">Contact</a></li>
         </ul>
     </nav>
-    <h1>Contact Us</h1>
-    <p>
-        If you have any questions or comments, please don't hesitate to contact us. Our team is always happy to help. You can reach us through the following channels: 
-
-    </p>
-    <ul>
-        <li>Email: <a href="mailto:QpTqP@example.com">QpTqP@example.com</a></li>
-        <li>Phone: 123-456-7890</li>            
-    </ul>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>
+            If you have any questions or comments, please don't hesitate to contact us. Our team is always happy to help. You can reach us through the following channels:
+        </p>
+        <div class="contact-info">
+            <ul>
+                <li>Email: <a href="mailto:indreshv@gmail.com">indreshv@gmail.com</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path fill="#4caf50" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"></path>
+                        <path fill="#1e88e5" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"></path>
+                        <polygon fill="#e53935" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.95 35,23.7 36,17"></polygon>
+                        <path fill="#c62828" d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C9.132,8.301,8.228,8,7.298,8h0C4.924,8,3,9.924,3,12.298z"></path>
+                        <path fill="#fbc02d" d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341C38.868,8.301,39.772,8,40.702,8h0 C43.076,8,45,9.924,45,12.298z"></path>
+                    </svg>
+                </li>
+                <li>Phone: 123-456-7890</li>            
+            </ul>
+        </div>
+    </div>
     <footer>
         <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
     </footer>
-
-
 </body>
 </html>

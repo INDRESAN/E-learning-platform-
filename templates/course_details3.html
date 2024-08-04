@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduction to Cloud Computing</title>
     <style>
-   /* Basic styling */
-   body {
+        /* Basic styling */
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f4f8; /* Very light blue-gray background */
+            color: #334e68; /* Dark gray-blue text */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
-            background-color: #333;
+            background-color: #5a6f7c; /* Soft gray-blue */
             color: #fff;
             padding: 10px;
             text-align: center;
         }
         nav {
-            background-color: #f4f4f4;
+            background-color: #f4f4f4; /* Light gray */
             padding: 10px;
         }
         nav ul {
@@ -33,42 +38,48 @@
         }
         nav ul li a {
             text-decoration: none;
-            color: #333;
+            color: #334e68; /* Dark gray-blue */
             font-weight: bold;
         }
         nav ul li a:hover {
-            color: #666;
+            color: #3d5a80; /* Soft dark blue */
         }
-
+        .container {
+            flex: 1; /* Allow container to grow and fill available space */
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            border: 1px solid #9eb3c2; /* Light blue border */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
         footer {
-            background-color: #333;
+            background-color: #5a6f7c; /* Soft gray-blue */
             color: #fff;
             text-align: center;
             padding: 10px;
-            position: absolute;
-
-            width: 100%;
         }
         a {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-}
-
-a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
-.next {
-  background-color: #04AA6D;
-  color: white;
-}
-
-.round {
-  border-radius: 50%;
-}
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 16px;
+        }
+        a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .next {
+            background-color: #04AA6D; /* Green background */
+            color: white;
+            border-radius: 5px; /* Rounded corners */
+        }
+        .next:hover {
+            background-color: #037f5b; /* Darker green on hover */
+        }
+        .round {
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -77,93 +88,93 @@ a:hover {
     </header>
     <nav>
         <ul>
-            <li><a href="{{url_for('home')}}">Home</a></li>
-            <li><a href="{{url_for('course')}}">Courses</a></li>
-            <li><a href="{{url_for('mycourses')}}">MyCourses</a></li>
-            <li><a href="{{url_for('about')}}">About</a></li>
-            <li><a href="{{url_for('service')}}">Contact</a></li>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('course') }}">Courses</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('service') }}">Contact</a></li>
         </ul>
     </nav>
-    <h1>Introduction to Cloud Computing</h1>
-    <p><strong>Cloud computing</strong> is a revolutionary technology that allows users to access and manage computing resources, such as servers, storage, databases, and applications, over the internet. This model eliminates the need for physical hardware and provides scalable resources on-demand, making it an attractive option for businesses and individuals alike. Cloud computing enables flexibility, cost savings, and enhanced performance through various service and deployment models.</p>
+    <div class="container">
+        <h1>Introduction to Cloud Computing</h1>
+        <p><strong>Cloud computing</strong> is a revolutionary technology that allows users to access and manage computing resources, such as servers, storage, databases, and applications, over the internet. This model eliminates the need for physical hardware and provides scalable resources on-demand, making it an attractive option for businesses and individuals alike. Cloud computing enables flexibility, cost savings, and enhanced performance through various service and deployment models.</p>
 
-    <h2>Types of Cloud Services</h2>
-    <p>Cloud computing services are broadly categorized into three primary models, each serving different needs and requirements:</p>
-    
-    <h3>1. Infrastructure as a Service (IaaS)</h3>
-    <p>IaaS provides virtualized computing resources over the internet. This model allows users to rent infrastructure components such as virtual machines, storage, and networks from a cloud provider. IaaS offers a high degree of flexibility and control, making it suitable for applications requiring custom configurations or large-scale deployments.</p>
-    
-    <ul>
-        <li><strong>Advantages</strong>: Scalable resources, cost-effective, pay-as-you-go pricing, and flexible configurations.</li>
-        <li><strong>Examples</strong>: Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP).</li>
-    </ul>
+        <h2>Types of Cloud Services</h2>
+        <p>Cloud computing services are broadly categorized into three primary models, each serving different needs and requirements:</p>
+        
+        <h3>1. Infrastructure as a Service (IaaS)</h3>
+        <p>IaaS provides virtualized computing resources over the internet. This model allows users to rent infrastructure components such as virtual machines, storage, and networks from a cloud provider. IaaS offers a high degree of flexibility and control, making it suitable for applications requiring custom configurations or large-scale deployments.</p>
+        
+        <ul>
+            <li><strong>Advantages</strong>: Scalable resources, cost-effective, pay-as-you-go pricing, and flexible configurations.</li>
+            <li><strong>Examples</strong>: Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP).</li>
+        </ul>
 
-    <h3>2. Platform as a Service (PaaS)</h3>
-    <p>PaaS offers a platform allowing customers to develop, run, and manage applications without dealing with the underlying infrastructure. It provides a suite of tools and services to support application development, including databases, development frameworks, and middleware. PaaS simplifies the development process by abstracting away infrastructure management tasks.</p>
-    
-    <ul>
-        <li><strong>Advantages</strong>: Streamlined development, automatic updates, built-in tools and services, and reduced infrastructure management.</li>
-        <li><strong>Examples</strong>: Google App Engine, Heroku, Microsoft Azure App Service.</li>
-    </ul>
+        <h3>2. Platform as a Service (PaaS)</h3>
+        <p>PaaS offers a platform allowing customers to develop, run, and manage applications without dealing with the underlying infrastructure. It provides a suite of tools and services to support application development, including databases, development frameworks, and middleware. PaaS simplifies the development process by abstracting away infrastructure management tasks.</p>
+        
+        <ul>
+            <li><strong>Advantages</strong>: Streamlined development, automatic updates, built-in tools and services, and reduced infrastructure management.</li>
+            <li><strong>Examples</strong>: Google App Engine, Heroku, Microsoft Azure App Service.</li>
+        </ul>
 
-    <h3>3. Software as a Service (SaaS)</h3>
-    <p>SaaS delivers software applications over the internet on a subscription basis. Users can access applications via a web browser, eliminating the need for local installation and maintenance. SaaS is commonly used for productivity tools, customer relationship management (CRM), and collaboration.</p>
-    
-    <ul>
-        <li><strong>Advantages</strong>: Accessibility from any device, automatic updates, and reduced IT maintenance.</li>
-        <li><strong>Examples</strong>: Salesforce, Google Workspace, Microsoft 365.</li>
-    </ul>
+        <h3>3. Software as a Service (SaaS)</h3>
+        <p>SaaS delivers software applications over the internet on a subscription basis. Users can access applications via a web browser, eliminating the need for local installation and maintenance. SaaS is commonly used for productivity tools, customer relationship management (CRM), and collaboration.</p>
+        
+        <ul>
+            <li><strong>Advantages</strong>: Accessibility from any device, automatic updates, and reduced IT maintenance.</li>
+            <li><strong>Examples</strong>: Salesforce, Google Workspace, Microsoft 365.</li>
+        </ul>
 
-    <h2>Benefits of Cloud Computing</h2>
-    <p>Cloud computing offers numerous benefits that contribute to its widespread adoption:</p>
-    
-    <ul>
-        <li><strong>Cost Efficiency</strong>: Reduces capital expenditure by eliminating the need for physical hardware and infrastructure. Users pay only for the resources they use.</li>
-        <li><strong>Scalability</strong>: Easily scale resources up or down based on demand, ensuring optimal performance and cost-efficiency.</li>
-        <li><strong>Accessibility</strong>: Access cloud resources from anywhere with an internet connection, enabling remote work and collaboration.</li>
-        <li><strong>Disaster Recovery</strong>: Provides backup and recovery solutions to protect data in case of hardware failures or other disruptions.</li>
-        <li><strong>Automatic Updates</strong>: Cloud providers manage and deploy updates automatically, ensuring users have access to the latest features and security patches.</li>
-        <li><strong>Enhanced Security</strong>: Cloud providers invest in advanced security measures and compliance certifications to protect data and applications.</li>
-    </ul>
+        <h2>Benefits of Cloud Computing</h2>
+        <p>Cloud computing offers numerous benefits that contribute to its widespread adoption:</p>
+        
+        <ul>
+            <li><strong>Cost Efficiency</strong>: Reduces capital expenditure by eliminating the need for physical hardware and infrastructure. Users pay only for the resources they use.</li>
+            <li><strong>Scalability</strong>: Easily scale resources up or down based on demand, ensuring optimal performance and cost-efficiency.</li>
+            <li><strong>Accessibility</strong>: Access cloud resources from anywhere with an internet connection, enabling remote work and collaboration.</li>
+            <li><strong>Disaster Recovery</strong>: Provides backup and recovery solutions to protect data in case of hardware failures or other disruptions.</li>
+            <li><strong>Automatic Updates</strong>: Cloud providers manage and deploy updates automatically, ensuring users have access to the latest features and security patches.</li>
+            <li><strong>Enhanced Security</strong>: Cloud providers invest in advanced security measures and compliance certifications to protect data and applications.</li>
+        </ul>
 
-    <h2>Cloud Deployment Models</h2>
-    <p>Cloud deployment models define how cloud services are delivered and accessed. The primary models include:</p>
-    
-    <h3>1. Public Cloud</h3>
-    <p>Public clouds are operated by third-party cloud service providers and are available to the general public. They offer shared resources and are typically cost-effective, making them suitable for a wide range of applications.</p>
-    
-    <h3>2. Private Cloud</h3>
-    <p>Private clouds are dedicated to a single organization and can be hosted on-premises or by a third-party provider. They offer greater control, security, and customization but may come with higher costs compared to public clouds.</p>
-    
-    <h3>3. Hybrid Cloud</h3>
-    <p>Hybrid clouds combine public and private cloud environments, allowing data and applications to be shared between them. This model offers flexibility, enabling organizations to optimize resources based on specific needs and requirements.</p>
-    
-    <h3>4. Community Cloud</h3>
-    <p>Community clouds are shared by multiple organizations with similar interests and requirements. They can be managed by a third party or a consortium of organizations and provide a balance between public and private cloud benefits.</p>
+        <h2>Cloud Deployment Models</h2>
+        <p>Cloud deployment models define how cloud services are delivered and accessed. The primary models include:</p>
+        
+        <h3>1. Public Cloud</h3>
+        <p>Public clouds are operated by third-party cloud service providers and are available to the general public. They offer shared resources and are typically cost-effective, making them suitable for a wide range of applications.</p>
+        
+        <h3>2. Private Cloud</h3>
+        <p>Private clouds are dedicated to a single organization and can be hosted on-premises or by a third-party provider. They offer greater control, security, and customization but may come with higher costs compared to public clouds.</p>
+        
+        <h3>3. Hybrid Cloud</h3>
+        <p>Hybrid clouds combine public and private cloud environments, allowing data and applications to be shared between them. This model offers flexibility, enabling organizations to optimize resources based on specific needs and requirements.</p>
+        
+        <h3>4. Community Cloud</h3>
+        <p>Community clouds are shared by multiple organizations with similar interests and requirements. They can be managed by a third party or a consortium of organizations and provide a balance between public and private cloud benefits.</p>
 
-    <h2>Challenges in Cloud Computing</h2>
-    <p>Despite its advantages, cloud computing also presents some challenges:</p>
-    
-    <ul>
-        <li><strong>Security and Privacy</strong>: Ensuring the security of data and applications in the cloud is critical, as breaches or data loss can have serious consequences.</li>
-        <li><strong>Compliance</strong>: Adhering to regulatory requirements and industry standards can be complex when using cloud services, especially in highly regulated sectors.</li>
-        <li><strong>Downtime and Reliability</strong>: Cloud services can experience outages or disruptions, impacting business operations. Choosing reliable providers and implementing redundancy measures can help mitigate this risk.</li>
-        <li><strong>Cost Management</strong>: While cloud computing can be cost-effective, managing and optimizing cloud expenditures can be challenging, especially with complex pricing models and variable usage patterns.</li>
-    </ul>
+        <h2>Challenges in Cloud Computing</h2>
+        <p>Despite its advantages, cloud computing also presents some challenges:</p>
+        
+        <ul>
+            <li><strong>Security and Privacy</strong>: Ensuring the security of data and applications in the cloud is critical, as breaches or data loss can have serious consequences.</li>
+            <li><strong>Compliance</strong>: Adhering to regulatory requirements and industry standards can be complex when using cloud services, especially in highly regulated sectors.</li>
+            <li><strong>Downtime and Reliability</strong>: Cloud services can experience outages or disruptions, impacting business operations. Choosing reliable providers and implementing redundancy measures can help mitigate this risk.</li>
+            <li><strong>Cost Management</strong>: While cloud computing can be cost-effective, managing and optimizing cloud expenditures can be challenging, especially with complex pricing models and variable usage patterns.</li>
+        </ul>
 
-    <h2>Future Trends in Cloud Computing</h2>
-    <p>Cloud computing is continuously evolving, with several trends shaping its future:</p>
-    
-    <ul>
-        <li><strong>Serverless Computing</strong>: Allows developers to build and run applications without managing servers, reducing operational overhead and increasing scalability.</li>
-        <li><strong>Edge Computing</strong>: Brings computation and data storage closer to the data source, improving latency and reducing bandwidth usage.</li>
-        <li><strong>Multi-Cloud Strategies</strong>: Organizations are increasingly adopting multi-cloud approaches, leveraging services from multiple cloud providers to avoid vendor lock-in and enhance resilience.</li>
-        <li><strong>AI and Machine Learning Integration</strong>: Cloud platforms are incorporating AI and machine learning capabilities, enabling advanced analytics, automation, and intelligent decision-making.</li>
-    </ul>
-    <a href="{{ url_for('quiz') }}" class="next">Next &raquo;</a>
-  
+        <h2>Future Trends in Cloud Computing</h2>
+        <p>Cloud computing is continuously evolving, with several trends shaping its future:</p>
+        
+        <ul>
+            <li><strong>Serverless Computing</strong>: Allows developers to build and run applications without managing servers, reducing operational overhead and increasing scalability.</li>
+            <li><strong>Edge Computing</strong>: Brings computation and data storage closer to the data source, improving latency and reducing bandwidth usage.</li>
+            <li><strong>Multi-Cloud Strategies</strong>: Organizations are increasingly adopting multi-cloud approaches, leveraging services from multiple cloud providers to avoid vendor lock-in and enhance resilience.</li>
+            <li><strong>AI and Machine Learning Integration</strong>: Cloud platforms are incorporating AI and machine learning capabilities, enabling advanced analytics, automation, and intelligent decision-making.</li>
+        </ul>
+        <a href="{{ url_for('quiz2') }}" class="next">Next &raquo;</a>
+    </div>
     <footer>
-            <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
+        <p>&copy; 2024 Cloud-based E-Learning Platform. All rights reserved.</p>
     </footer>
 </body>
 </html>
