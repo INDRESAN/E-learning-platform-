@@ -89,7 +89,7 @@ def course_details_3():
     return render_template("course_details3.html")
 
 @app.route('/course_details4',methods=['POST','GET'])
-def service():
+def course_details_4():
     if request.method=='POST':
        db.session.commit()
     return render_template('services.html')
